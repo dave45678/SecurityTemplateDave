@@ -16,5 +16,8 @@
     <div sec:authorize="hasAuthority('ADMIN')">
             Administrators will see this text. You can display a navbar here.
     </div>
+
+    <p th:text="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}?'Show this text to administrators':'Show this text to everyone else'">
+    </p>
 </body>
 </html>
