@@ -42,20 +42,20 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loading users into the application");
         AppUser user = new AppUser();
         user.setPassword(passwordEncoder.encode("password"));
-        user.setUsername("newuser");
+        user.setUsername("adminuser");
         user.addRole(roleRepository.findByRole("ADMIN"));
         user.addRole(roleRepository.findByRole("USER"));
         userRepository.save(user);
 
         user = new AppUser();
         user.setPassword(passwordEncoder.encode("password"));
-        user.setUsername("adminuser");
+        user.setUsername("admin");
         user.addRole(roleRepository.findByRole("ADMIN"));
         userRepository.save(user);
 
         user = new AppUser();
         user.setPassword(passwordEncoder.encode("password"));
-        user.setUsername("ordinaryuser");
+        user.setUsername("user");
         user.addRole(roleRepository.findByRole("USER"));
         userRepository.save(user);
     }
